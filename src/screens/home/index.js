@@ -1,6 +1,13 @@
 import React from 'react';
-import { Navbar } from '../../components';
+import { Navbar, Movie, List } from '../../components';
 
 export default function HomeScreen(props) {
-	return <Navbar />;
+	return (
+		<>
+			<Navbar />
+			<List style={{ marginLeft: '22px' }}>
+				<Movie />
+			</List>
+		</>
+	);
 }
