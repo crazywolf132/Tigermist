@@ -4,14 +4,7 @@ import AppReducer from '../reducers/AppReducer';
 const AppContext = createContext(null);
 
 export const initialState = {
-	movies: [],
-	watchList: [],
-	likes: [],
-	dislikes: [],
-	isLoading: false,
-	isLoaded: true,
-	isSearchMode: false,
-	isWatchListMode: false,
+	displayMode: 0, // 0 = Watch List, 1 = Search Mode
 };
 
 const AppProvider = (props) => {
