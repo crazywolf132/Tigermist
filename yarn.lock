@@ -1322,6 +1322,13 @@
     "@types/yargs" "^15.0.0"
     chalk "^3.0.0"
 
+"@jungla/language@^0.0.6":
+  version "0.0.6"
+  resolved "https://registry.yarnpkg.com/@jungla/language/-/language-0.0.6.tgz#57950fdeb9be1141bd144144e988306c9c7aacbc"
+  integrity sha512-yU9+8+FRO81OUruwXsI8gESbuGLNluMOJ+KWzQsAmZcAEvJkRV/+E51ZVQgboZeKH42LwR67bBs8q3OUWnLmXA==
+  dependencies:
+    lodash "^4.17.15"
+
 "@mrmlnc/readdir-enhanced@^2.2.1":
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/@mrmlnc/readdir-enhanced/-/readdir-enhanced-2.2.1.tgz#524af240d1a360527b730475ecfa1344aa540dde"
