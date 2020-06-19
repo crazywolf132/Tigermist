@@ -15,6 +15,9 @@ export const MovieImage = styled.img`
 	border-radius: 10px;
 	box-shadow: 0px 8px 28px rgba(134, 118, 251, 0.4);
 	height: 266px;
+	width: 177px;
+	margin: 0 auto;
+`;
 `;
 
 export const MovieTitle = styled.h2`
