@@ -5,13 +5,10 @@ export default function MovieComponent(props) {
 	const [isHovering, setHovering] = useState(false);
 
 	return (
-		<MovieContainer>
-			<MovieImage src='https://m.media-amazon.com/images/M/MV5BNzQzMzJhZTEtOWM4NS00MTdhLTg0YjgtMjM4MDRkZjUwZDBlXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_SX300.jpg' />
-			<MovieTitle>Blade Runner</MovieTitle>
-			<MovieDetails>Action, Sci-Fi, Thriller ● 117 min</MovieDetails>
 		<MovieContainer
 			onMouseEnter={() => setHovering(true)}
 			onMouseLeave={() => setHovering(false)}>
+			<MovieImage src={img} />
 			{isHovering && (
 				<HoverButtonContainer>
 					{hoverButtons.map((button, index) => (
@@ -24,6 +21,15 @@ export default function MovieComponent(props) {
 					))}
 				</HoverButtonContainer>
 			)}
+			<MovieTitle>
+				{title.length > 13 ? title.slice(0, 13) + '...' : title}
+			</MovieTitle>
+			<MovieDetails>
+				{`${genre} ● ${time}`.length > 41
+					? genre.slice(0, 41 - `● ${time}...`.length) + '...'
+					: genre}{' '}
+				● {time}
+			</MovieDetails>
 		</MovieContainer>
 	);
 }
