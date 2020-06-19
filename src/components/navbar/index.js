@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
 	NavContainer,
 	UserIcon,
@@ -9,6 +9,9 @@ import {
 } from './style';
 
 export default function NavBarComponet(props) {
+	const { items } = props;
+	const [menuItems, setMenuItems] = useState(items);
+
 	return (
 		<NavContainer>
 			<Menu>
