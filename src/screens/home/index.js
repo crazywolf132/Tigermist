@@ -6,10 +6,21 @@ export default function HomeScreen(props) {
 	const { dispatch } = useContext(AppContext);
 	return (
 		<>
-			<Navbar />
-			<List style={{ marginLeft: '22px' }}>
-				<Movie />
-			</List>
+			<Navbar
+				items={[
+					{ title: 'Watch List', active: true },
+					{
+						title: 'Search',
+						active: false,
+						callBack: () => {
+							dispatch({
+								type: 'CHANGE_SCREEN',
+								value: 1,
+							});
+						},
+					},
+				]}
+			/>
 		</>
 	);
 }
