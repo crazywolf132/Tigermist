@@ -6,8 +6,7 @@ export const NavContainer = styled.div`
 
 export const UserIcon = styled.img`
 	border-radius: 100%;
-	margin-top: 5px;
-	margin-right: 5px;
+	margin: 5px 5px 5px 5px;
 	height: 44px;
 	width: 44px;
 `;
@@ -42,4 +41,8 @@ export const MenuItem = styled.li`
 	color: #171d33;
 
 	${(props) => props.active && 'border-bottom: 4px solid #613EEA;'}
+
+	&:hover {
+		cursor: pointer;
+	}
 `;
