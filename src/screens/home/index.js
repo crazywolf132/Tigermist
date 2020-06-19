@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useContext } from 'react';
 import AppContext from '../../context/AppContext';
 import { Navbar, Movie, List } from '../../components';
+import { Title } from './style';
 import useLocalStorage from '../../handlers/useLocalStorage';
 
 export default function HomeScreen(props) {
@@ -25,6 +26,17 @@ export default function HomeScreen(props) {
 					},
 				]}
 			/>
+			{watchList.length >= 1 && (
+				<>
+					<Title style={{ marginLeft: '44px' }}>Watch List</Title>
+					{likes.length >= 1 && (
+						<Title style={{ marginLeft: '44px' }}>Liked</Title>
+					)}
+					{dislikes.length >= 1 && (
+						<Title style={{ marginLeft: '44px' }}>Disliked</Title>
+					)}
+				</>
+			)}
 			{watchList.length === 0 && (
 				<h1
 					style={{
