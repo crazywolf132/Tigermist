@@ -3,6 +3,12 @@ import styled from 'styled-components';
 export const MovieContainer = styled.div`
 	display: flex;
 	flex-direction: column;
+	margin: 16px;
+
+	&:hover {
+		// transform: scale(1.01);
+		opacity: 0.8;
+	}
 `;
 
 export const MovieImage = styled.img`
