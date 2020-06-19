@@ -85,6 +85,37 @@ export default function HomeScreen(props) {
 					{likes.length >= 1 && (
 						<Title style={{ marginLeft: '44px' }}>Liked</Title>
 					)}
+					<List style={{ marginLeft: '22px' }}>
+						{likes.map((movie, index) => (
+							<Movie
+								key={index}
+								img={movie.Poster || ''}
+								title={movie.Title}
+								genre={movie.Genre}
+								time={movie.Runtime}
+								hoverButtons={[
+									{
+										title: '👍',
+										callBack: () =>
+											changeLikeDislikeStatus(movie),
+									},
+									{
+										title: '🗑️',
+										callBack: () =>
+											removeFromWatchList(movie),
+									},
+									{
+										title: '👎',
+										callBack: () =>
+											changeLikeDislikeStatus(
+												movie,
+												false
+											),
+									},
+								]}
+							/>
+						))}
+					</List>
 					{dislikes.length >= 1 && (
 						<Title style={{ marginLeft: '44px' }}>Disliked</Title>
 					)}
