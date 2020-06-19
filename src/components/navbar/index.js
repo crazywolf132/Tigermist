@@ -15,6 +15,22 @@ export default function NavBarComponet(props) {
 	return (
 		<NavContainer>
 			<Menu>
+				{menuItems.map((item, index) => (
+					<MenuItem
+						key={index}
+						active={item.active}
+						onClick={() => {
+							// changeActive(index);
+							let copy = menuItems.map((item) => {
+								return { ...item, active: false };
+							});
+							copy[index] = { ...copy[index], active: true };
+							setMenuItems(copy);
+							item.callBack && item.callBack();
+						}}>
+						{item.title}
+					</MenuItem>
+				))}
 			</Menu>
 			<UserGroup>
 				<Welcome>Hi, Lily</Welcome>
