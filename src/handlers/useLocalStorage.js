@@ -1,5 +1,11 @@
 import React, { useState } from 'react';
 
+/**
+ * This is a hook used to connect to the localstorage.
+ * @param {STRING} key
+ * @param {OBJECT} initialValue
+ */
+
 export default function (key, initialValue) {
 	// State to store our value
 	// Pass initial state function to useState so logic is only executed once

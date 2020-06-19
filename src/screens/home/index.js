@@ -5,13 +5,32 @@ import { Title } from './style';
 import useLocalStorage from '../../handlers/useLocalStorage';
 import _ from 'lodash';
 
-export default function HomeScreen(props) {
+/**
+ * This screen should be split up into sub-screens... as there is too much
+ * code for this one page.
+ *
+ * There should be a new sub-screen for each list and title. This could then
+ * re-use code rather than having it copy-pasted three times.
+ *
+ * This was simply not done due to time constraints outside the realm of this project.
+ */
+
+export default function HomeScreen() {
 	const { dispatch } = useContext(AppContext);
 
+	/**
+	 * Loading our localstorage lists...
+	 */
 	const [watchList, setWatchList] = useLocalStorage('watchList', []);
 	const [likes, setLikes] = useLocalStorage('likes', []);
 	const [dislikes, setDislikes] = useLocalStorage('dislikes', []);
 
+	/**
+	 * This function is used to go through liked, and disliked movie lists,
+	 * and move around the movie... depending on if the user likes it or doesn't
+	 * @param {Object} movie
+	 * @param {Boolean} liked
+	 */
 	const changeLikeDislikeStatus = (movie, liked = true) => {
 		if (!liked) {
 			// Going to remove it from the liked list... if it is there.
@@ -25,6 +44,11 @@ export default function HomeScreen(props) {
 		}
 	};
 
+	/**
+	 * This function is used to remove a movie from all lists... This is only called
+	 * when a user deletes the movie.
+	 * @param {Object} movie
+	 */
 	const removeFromWatchList = (movie) => {
 		setLikes(likes.filter((m) => m.ID !== movie.ID));
 		setDislikes(dislikes.filter((m) => m.ID !== movie.ID));
