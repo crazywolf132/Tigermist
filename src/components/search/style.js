@@ -11,4 +11,13 @@ export const SearchBar = styled.input`
 	margin-left: 10%;
 	margin-right: 10%;
 	border-radius: 5px;
+
+	@media (max-width: 376px) {
+		width: 91%;
+		max-width: 91%;
+		justify-content: center;
+		align-items: center;
+		padding: 16px;
+		margin: 0 auto;
+	}
 `;

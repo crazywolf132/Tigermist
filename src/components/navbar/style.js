@@ -2,11 +2,15 @@ import styled from 'styled-components';
 
 export const NavContainer = styled.div`
 	display: flex;
+
+	@media (max-width: 376px) {
+		flex-direction: column-reverse;
+	}
 `;
 
 export const UserIcon = styled.img`
 	border-radius: 100%;
-	margin: 5px 5px 5px 5px;
+	margin: 10px 10px 0px 0px;
 	height: 44px;
 	width: 44px;
 `;
@@ -22,6 +26,10 @@ export const Welcome = styled.h1`
 export const UserGroup = styled.div`
 	flex: 1;
 	display: flex;
+
+	@media (max-width: 376px) {
+		display: none;
+	}
 `;
 
 export const Menu = styled.ul`
