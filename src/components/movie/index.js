@@ -1,7 +1,15 @@
-import React from 'react';
-import { MovieImage, MovieContainer, MovieTitle, MovieDetails } from './style';
+import React, { useState } from 'react';
+import {
+	MovieImage,
+	MovieContainer,
+	MovieTitle,
+	MovieDetails,
+	HoverButton,
+	HoverButtonContainer,
+} from './style';
 
 export default function MovieComponent(props) {
+	const { img, title, genre, time, onClick, hoverButtons } = props;
 	const [isHovering, setHovering] = useState(false);
 
 	return (
