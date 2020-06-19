@@ -5,6 +5,7 @@ import Axios from 'axios';
 import Jungla from '@jungla/language';
 import useLocalStorage from '../../handlers/useLocalStorage';
 import { ToastContainer, toast } from 'react-toastify';
+import _ from 'lodash';
 import 'react-toastify/dist/ReactToastify.css';
 
 export default function SearchScreen() {
@@ -98,7 +99,6 @@ export default function SearchScreen() {
 									},
 									title: 'Add to watch list',
 									callBack: () => {
-										setWatchlist([...watchList, movieItem]);
 										toast('🙌 Movie added to watch list', {
 											position: 'top-right',
 											autoClose: 2250,
