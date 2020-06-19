@@ -4,6 +4,8 @@ import { Navbar, Searchbar, List, Movie } from '../../components';
 import Axios from 'axios';
 import Jungla from '@jungla/language';
 import useLocalStorage from '../../handlers/useLocalStorage';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export default function SearchScreen() {
 	const { dispatch } = useContext(AppContext);
@@ -60,6 +62,7 @@ export default function SearchScreen() {
 					},
 				]}
 			/>
+			<ToastContainer />
 			<Searchbar
 				style={{ margin: '20px auto' }}
 				callBack={(value) => setSearchValue(value)}
@@ -96,6 +99,18 @@ export default function SearchScreen() {
 									title: 'Add to watch list',
 									callBack: () => {
 										setWatchlist([...watchList, movieItem]);
+										toast('🙌 Movie added to watch list', {
+											position: 'top-right',
+											autoClose: 2250,
+											hideProgressBar: true,
+											closeOnClick: true,
+											pauseOnHover: true,
+											draggable: false,
+											progress: undefined,
+										});
+										setWatchlist(
+											_.uniq([...watchList, movieItem])
+										);
 									},
 								},
 							]}
