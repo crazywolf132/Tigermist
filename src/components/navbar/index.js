@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
 	NavContainer,
 	UserIcon,
@@ -9,11 +9,28 @@ import {
 } from './style';
 
 export default function NavBarComponet(props) {
+	const { items } = props;
+	const [menuItems, setMenuItems] = useState(items);
+
 	return (
 		<NavContainer>
 			<Menu>
-				<MenuItem active>Discover</MenuItem>
-				<MenuItem>Watch List</MenuItem>
+				{menuItems.map((item, index) => (
+					<MenuItem
+						key={index}
+						active={item.active}
+						onClick={() => {
+							// changeActive(index);
+							let copy = menuItems.map((item) => {
+								return { ...item, active: false };
+							});
+							copy[index] = { ...copy[index], active: true };
+							setMenuItems(copy);
+							item.callBack && item.callBack();
+						}}>
+						{item.title}
+					</MenuItem>
+				))}
 			</Menu>
 			<UserGroup>
 				<Welcome>Hi, Lily</Welcome>
