@@ -18,6 +18,32 @@ export const MovieImage = styled.img`
 	width: 177px;
 	margin: 0 auto;
 `;
+
+export const HoverButtonContainer = styled.div`
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	&:hover {
+		cursor: pointer;
+	}
+`;
+
+export const HoverButton = styled.div`
+	border-radius: 100%;
+	width: 50px;
+	flex: 1;
+	text-align: center;
+
+	&:hover {
+		cursor: pointer;
+		opacity: 0.8;
+	}
+
+	&:active {
+		opacity: 0.6;
+		transform: scale(0.9);
+	}
 `;
 
 export const MovieTitle = styled.h2`
